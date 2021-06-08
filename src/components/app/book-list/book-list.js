@@ -2,9 +2,10 @@ import React, {Component} from 'react';
 import BookListItem from '../book-list-item/book-list-item';
 import {connect} from 'react-redux';
 
-import {booksLoaded} from '../../../actions'
+import './book-list.css'
+import {booksLoaded} from '../../../actions';
 import withBookstoreService from '../../hoc/with-bookstore-service';
-import compose from '../../../utils/compose'
+import compose from '../../../utils/compose';
 
 class BookList extends Component {
 
@@ -16,7 +17,7 @@ class BookList extends Component {
     render(){
         const {books} = this.props;
         return (
-            <ul>
+            <ul className="book-list">
                 {books.map((book) => {
                     return (
                         <li key={book.id}><BookListItem book={book}/></li>
